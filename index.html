@@ -7,14 +7,27 @@
   <link rel="stylesheet" href="style/main.css" />
 </head>
 <body>
-  <header>
+  <header class="header">
+    <img src="icon.png" alt="KelontongPi Logo" class="logo" />
     <h1>KelontongPi Cirebon</h1>
-    <p>Aplikasi distribusi warung berbasis Pi Network</p>
+    <p class="subtitle">Distribusi Warung Berbasis Pi Network</p>
   </header>
-  
-  <main>
-    <button onclick="alert('Fitur belum aktif')">Lihat Katalog</button>
+
+  <main class="main">
+    <section class="menu">
+      <button onclick="showKatalog()">Lihat Katalog Barang</button>
+      <button onclick="showPreorder()">Pre-Order</button>
+      <button onclick="showLoyalty()">Poin Loyalti</button>
+    </section>
+    
+    <section id="konten" class="konten">
+      <p>Silakan pilih menu di atas.</p>
+    </section>
   </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 KelontongPi. Dibuat untuk komunitas Pi Network di Cirebon.</p>
+  </footer>
 
   <script src="js/main.js"></script>
 </body>
