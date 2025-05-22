@@ -23,6 +23,6 @@ Kami juga membuka kolaborasi non-teknis:
 
 ## Kontak
 Email: warung.emung26@gmail.com  
-Forum: https://sidraforums.com/u/pipinantosin
+Forum: https://sidraforums.com/u/atos007
 
 Terima kasih telah mendukung digitalisasi UMKM lokal.
