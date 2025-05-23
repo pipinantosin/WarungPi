@@ -3,51 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WarungPi</title>
+  <title>WarungPi - Toko Digital</title>
   <link rel="stylesheet" href="style/main.css" />
+  <script src="js/main.js" defer></script>
 </head>
 <body>
-  <nav>
-    <div class="nav-brand">WarungPi</div>
-    <ul class="nav-menu">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#produk">Produk</a></li>
-      <li><a href="#tentang">Tentang</a></li>
-    </ul>
-  </nav>
-
-  <header id="home">
-    <h1>Selamat datang di WarungPi</h1>
-    <p>Belanja kebutuhan warung langsung dengan Pi Network</p>
-    <button id="login-btn">Login dengan Pi</button>
+  <header>
+    <h1>WarungPi</h1>
+    <p>Platform Warung Digital Berbasis Pi Network</p>
   </header>
 
   <main>
-    <section id="produk">
-      <h2>Daftar Produk</h2>
-      <ul id="product-list">
-        <li class="price-idr" data-idr="15000">
-          Mie Instan - <span class="pi-price"></span>
-        </li>
-        <li class="price-idr" data-idr="150000">
-          Minyak Goreng 1L - <span class="pi-price"></span>
-        </li>
-        <li class="price-idr" data-idr="1000000">
-          Beras 5kg - <span class="pi-price"></span>
-        </li>
-      </ul>
-    </section>
-
-    <section id="tentang">
-      <h2>Tentang WarungPi</h2>
-      <p>WarungPi adalah platform digital untuk warung-warung Indonesia bertransaksi menggunakan Pi Network secara langsung.</p>
+    <section>
+      <h2>Daftar Produk Sembako & Harian</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Produk</th>
+            <th>Harga (IDR)</th>
+            <th>USD</th>
+            <th>Pi (π)</th>
+          </tr>
+        </thead>
+        <tbody id="product-list">
+          <!-- Data akan diisi oleh JavaScript -->
+        </tbody>
+      </table>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 WarungPi. Dibangun untuk komunitas Pi Network Indonesia.</p>
+    <p>&copy; 2025 WarungPi. Terhubung dengan Pi Network.</p>
   </footer>
-
-  <script src="js/main.js"></script>
 </body>
 </html>
