@@ -34,9 +34,9 @@ const products = [
   { name: "Baterai AA 2 pcs", price: 8000 }
 ];
 
-function formatPi(price) {
-  const usd = price / usdRate;
-  const pi = usd / piToUsd;
+function convertToPi(priceIdr) {
+  const usd = priceIdr / USD_RATE;
+  const pi = usd / PI_GCV;
   return pi.toFixed(6);
 }
 
