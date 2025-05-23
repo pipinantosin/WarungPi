@@ -1,6 +1,5 @@
-// Kurs update
-const usdRate = 15700; // update sesuai nilai kurs saat ini
-const piToUsd = 314159;
+const USD_RATE = 16000; // Nilai tukar IDR ke USD
+const PI_GCV = 314159;  // 1π = 314,159 USD (Global Consensus Value)
 
 const products = [
   { name: "Beras 5kg", price: 75000 },
@@ -34,9 +33,6 @@ const products = [
   { name: "Baterai AA 2 pcs", price: 8000 }
 ];
 
-const USD_RATE = 16000;
-const PI_GCV = 314159;
-
 function convertToPi(priceIdr) {
   const usd = priceIdr / USD_RATE;
   const pi = usd / PI_GCV;
@@ -46,13 +42,45 @@ function convertToPi(priceIdr) {
 document.addEventListener("DOMContentLoaded", () => {
   const tbody = document.getElementById("product-list");
 
-  products.forEach(product => {
+  products.forEach((product, index) => {
+    const piPrice = convertToPi(product.price);
+
     const tr = document.createElement("tr");
     tr.innerHTML = `
       <td>${product.name}</td>
-      <td>Rp ${product.priceIdr.toLocaleString()}</td>
-      <td>${convertToPi(product.priceIdr)} π</td>
+      <td>Rp ${product.price.toLocaleString()}</td>
+      <td>
+        ${piPrice} π <br/>
+        <button onclick="bayarPi('${product.name}', ${piPrice})">Bayar</button>
+      </td>
     `;
     tbody.appendChild(tr);
   });
 });
+
+function bayarPi(namaProduk, jumlahPi) {
+  Pi.createPayment(
+    {
+      amount: jumlahPi,
+      memo: `Pembelian: ${namaProduk}`,
+      metadata: { produk: namaProduk }
+    },
+    {
+      onReadyForServerApproval: function (paymentId) {
+        console.log("Siap untuk persetujuan server:", paymentId);
+        // Kirim ke backend kalau kamu punya
+      },
+      onReadyForServerCompletion: function (paymentId, txid) {
+        alert(`Pembayaran ${namaProduk} berhasil!`);
+        console.log("Transaksi:", txid);
+      },
+      onCancel: function (paymentId) {
+        alert("Pembayaran dibatalkan.");
+      },
+      onError: function (error, payment) {
+        console.error("Terjadi kesalahan:", error);
+        alert("Pembayaran gagal.");
+      }
+    }
+  );
+}
