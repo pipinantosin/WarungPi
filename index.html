@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WarungPi</title>
   <link rel="stylesheet" href="style/main.css" />
+  <script src="https://sdk.minepi.com/pi-sdk.js"></script> <!-- Tambahan SDK Pi -->
   <script src="js/main.js" defer></script>
 </head>
 <body>
@@ -23,7 +24,11 @@
   <section id="beranda" class="hero">
     <h1>Selamat Datang di WarungPi</h1>
     <p>Belanja kebutuhan harian, bayar pakai Pi!</p>
-    <a href="#produk" class="btn-primary">Lihat Produk</a>
+    <a href="#produk" class="btn-primary">Lihat Produk</a><br><br>
+
+    <!-- Tombol Login -->
+    <button onclick="loginWithPi()" class="btn-primary">Login dengan Pi</button>
+    <p id="username-display" style="margin-top: 1em;"></p>
   </section>
 
   <section id="produk" class="section">
@@ -58,5 +63,18 @@
   <footer>
     <p>&copy; 2025 WarungPi - Powered by Pi Network</p>
   </footer>
+
+  <!-- Login Script -->
+  <script>
+    function loginWithPi() {
+      Pi.authenticate(['username'], function(auth) {
+        if (auth && auth.user && auth.user.username) {
+          document.getElementById('username-display').innerText = 'Halo, ' + auth.user.username + '!';
+        } else {
+          alert('Login dibatalkan atau gagal.');
+        }
+      });
+    }
+  </script>
 </body>
 </html>
