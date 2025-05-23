@@ -3,19 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WarungPi - Toko Digital</title>
+  <title>WarungPi</title>
   <link rel="stylesheet" href="style/main.css" />
   <script src="js/main.js" defer></script>
 </head>
 <body>
   <header>
-    <h1>WarungPi</h1>
-    <p>Platform Warung Digital Berbasis Pi Network</p>
+    <nav class="navbar">
+      <h1 class="logo">WarungPi</h1>
+      <ul class="nav-links">
+        <li><a href="#beranda">Beranda</a></li>
+        <li><a href="#produk">Produk</a></li>
+        <li><a href="#tentang">Tentang</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main>
-    <section>
-      <h2>Daftar Produk Sembako & Harian</h2>
+  <section id="beranda" class="hero">
+    <h2>Selamat datang di WarungPi</h2>
+    <p>Toko kebutuhan harian berbasis Pi Network</p>
+  </section>
+
+  <main id="produk">
+    <h2>Daftar Produk</h2>
+    <div class="product-table-wrapper">
       <table>
         <thead>
           <tr>
@@ -26,11 +38,22 @@
           </tr>
         </thead>
         <tbody id="product-list">
-          <!-- Data akan diisi oleh JavaScript -->
+          <!-- Diisi oleh JS -->
         </tbody>
       </table>
-    </section>
+    </div>
   </main>
+
+  <section id="tentang" class="section">
+    <h2>Tentang Kami</h2>
+    <p>WarungPi adalah toko digital yang menjual kebutuhan harian dengan pembayaran berbasis mata uang Pi Network. Mudah, cepat, dan tanpa perantara.</p>
+  </section>
+
+  <section id="kontak" class="section">
+    <h2>Kontak</h2>
+    <p>Email: kontak@warungpi.com</p>
+    <p>Instagram: @warungpi</p>
+  </section>
 
   <footer>
     <p>&copy; 2025 WarungPi. Terhubung dengan Pi Network.</p>
