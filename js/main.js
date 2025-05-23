@@ -1,4 +1,4 @@
-const USD_TO_IDR = 15000; // bisa kamu ubah kalau nilai tukar berubah
+const USD_TO_IDR = 15000; // kamu bisa ubah sesuai kurs terkini
 const PI_TO_USD = 314159;
 
 const PI_TO_IDR = PI_TO_USD * USD_TO_IDR;
