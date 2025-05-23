@@ -1,20 +1,58 @@
-const USD_TO_IDR = 15000; // kamu bisa ubah sesuai kurs terkini
-const PI_TO_USD = 314159;
+// Kurs update
+const usdRate = 15700; // update sesuai nilai kurs saat ini
+const piToUsd = 314159;
 
-const PI_TO_IDR = PI_TO_USD * USD_TO_IDR;
+const products = [
+  { name: "Beras 5kg", price: 75000 },
+  { name: "Beras 10kg", price: 150000 },
+  { name: "Mie instan", price: 3500 },
+  { name: "Telur ayam 1kg", price: 30000 },
+  { name: "Minyak goreng 1L", price: 18000 },
+  { name: "Gula pasir 1kg", price: 16000 },
+  { name: "Tepung terigu 1kg", price: 10000 },
+  { name: "Garam halus 500gr", price: 4000 },
+  { name: "Kecap manis", price: 13000 },
+  { name: "Saos sambal", price: 12000 },
+  { name: "Penyedap rasa", price: 500 },
+  { name: "Santan instan", price: 3000 },
+  { name: "Air mineral", price: 3000 },
+  { name: "Kopi instan", price: 1500 },
+  { name: "Teh celup", price: 8000 },
+  { name: "Susu kental manis", price: 11000 },
+  { name: "Minuman buah", price: 4000 },
+  { name: "Sabun mandi", price: 3000 },
+  { name: "Pasta gigi", price: 9000 },
+  { name: "Sikat gigi", price: 6000 },
+  { name: "Deterjen 1kg", price: 15000 },
+  { name: "Pewangi pakaian", price: 10000 },
+  { name: "Tisu gulung", price: 7000 },
+  { name: "Pembalut wanita", price: 13000 },
+  { name: "Rokok", price: 25000 },
+  { name: "Gas LPG 3kg", price: 23000 },
+  { name: "Lilin 1 pack", price: 6000 },
+  { name: "Korek api", price: 1000 },
+  { name: "Baterai AA 2 pcs", price: 8000 }
+];
 
-function formatPi(piValue) {
-  return piValue.toFixed(7) + " π";
+function formatPi(price) {
+  const usd = price / usdRate;
+  const pi = usd / piToUsd;
+  return pi.toFixed(6);
 }
 
-function convertPrices() {
-  const items = document.querySelectorAll(".price-idr");
-  items.forEach(item => {
-    const idr = parseFloat(item.dataset.idr);
-    const pi = idr / PI_TO_IDR;
-    const piDisplay = formatPi(pi);
-    item.querySelector(".pi-price").textContent = piDisplay;
-  });
+function formatUSD(price) {
+  return (price / usdRate).toFixed(2);
 }
 
-document.addEventListener("DOMContentLoaded", convertPrices);
+const table = document.getElementById("product-list");
+
+products.forEach(product => {
+  const row = document.createElement("tr");
+  row.innerHTML = `
+    <td>${product.name}</td>
+    <td>Rp ${product.price.toLocaleString()}</td>
+    <td>$${formatUSD(product.price)}</td>
+    <td>${formatPi(product.price)} π</td>
+  `;
+  table.appendChild(row);
+});
