@@ -1,28 +1,18 @@
-# Panduan Kontribusi – KelontongPi Cirebon
+# Kontribusi ke WarungPi
 
-Terima kasih atas minat Anda untuk berkontribusi dalam proyek ini!
+Terima kasih telah ingin berkontribusi!
 
-Saat ini, kontribusi dapat dilakukan melalui beberapa cara:
+## Cara Berkontribusi
+1. Fork repository ini
+2. Buat branch baru (`fitur/nama-fitur`)
+3. Commit perubahan dan jelaskan dengan jelas
+4. Kirim Pull Request
 
-## 1. Masukan & Ide
-Silakan ajukan ide, saran, atau perbaikan melalui fitur **Issues** di GitHub.
+## Panduan Kode
+- Gunakan bahasa Indonesia untuk konten publik
+- Gunakan JavaScript standar (ES6+)
+- CSS disimpan di folder `style/`
+- File utama: `index.html`, `main.js`, `main.css`
 
-## 2. Bantuan Teknis
-Jika Anda seorang developer, kami membuka kesempatan untuk membantu:
-- Pengembangan frontend (React/Flutter)
-- Backend API sederhana untuk katalog & pemesanan
-- Integrasi pembayaran dengan Pi Network
-
-Silakan buka pull request (PR) jika ingin mengusulkan perubahan.
-
-## 3. Dukungan Komunitas
-Kami juga membuka kolaborasi non-teknis:
-- Promosi ke warung kelontong di Cirebon
-- Hubungan dengan koperasi & komunitas lokal
-- Edukasi digitalisasi warung berbasis Pi Network
-
-## Kontak
-Email: warung.emung26@gmail.com  
-Forum: https://sidraforums.com/u/atos007
-
-Terima kasih telah mendukung digitalisasi UMKM lokal.
+## Laporan Bug
+Silakan gunakan fitur Issues untuk melaporkan bug atau usulan.
