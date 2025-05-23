@@ -1,22 +1,19 @@
-# KelontongPi Cirebon
+# WarungPi
 
-**KelontongPi Cirebon** adalah platform digital yang menghubungkan distributor barang kebutuhan pokok dengan pemilik warung kelontong di wilayah Cirebon.
+**Digitalisasi Warung Nusantara dengan Pi Network**
 
-Aplikasi ini memungkinkan pemesanan stok barang secara langsung melalui sistem e-commerce dan pembayaran menggunakan **Pi Network**.
+WarungPi adalah platform digital berbasis Pi Network yang menghubungkan pemilik warung dengan distributor barang kebutuhan pokok di Indonesia. Aplikasi ini memungkinkan warung memesan stok secara efisien, terjadwal, dan menggunakan Pi sebagai metode pembayaran.
 
-## Fitur Utama
-- Katalog barang distributor
+### Fitur Utama
+- Katalog barang dari distributor
 - Sistem pre-order dan pengiriman terjadwal
-- Pembayaran dengan Pi
-- Sistem loyalti berbasis aktivitas warung
+- Pembayaran dengan Pi Network
+- Loyalti poin berbasis Pi
+- Fokus awal: Cirebon, ekspansi ke seluruh Indonesia
 
-## Tujuan Proyek
-Memperkuat rantai pasok lokal dan meningkatkan efisiensi distribusi barang pokok dengan teknologi blockchain.
+### Teknologi
+- HTML, CSS, JavaScript
+- Pi SDK untuk integrasi pembayaran
 
-## Status Proyek
-Tahap awal pengembangan MVP (Minimum Viable Product).  
-Distribusi uji coba direncanakan di beberapa kecamatan wilayah Cirebon.
-
-## Lisensi
-**Pi Open Source Software License (PiOS)**  
-Hak cipta © 2025 oleh Tim KelontongPi
+### Lisensi
+MIT License
