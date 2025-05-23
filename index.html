@@ -4,129 +4,134 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WarungPi</title>
-  <link rel="stylesheet" href="style/main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #5b2dcc;
+      color: #fff;
+      padding-bottom: 80px;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      padding: 16px;
+    }
+    .header img {
+      width: 40px;
+      margin-right: 12px;
+    }
+    .header h1 {
+      font-size: 24px;
+      margin: 0;
+    }
+    .card {
+      background-color: #a78bfa;
+      margin: 16px;
+      border-radius: 16px;
+      padding: 20px;
+      color: #2e1065;
+    }
+    .card h2 {
+      margin: 0 0 10px 0;
+      font-size: 20px;
+    }
+    .highlight-box {
+      background-color: white;
+      color: #4c1d95;
+      margin: 16px;
+      border-radius: 16px;
+      padding: 16px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .search-box {
+      margin: 0 16px;
+      background-color: white;
+      border-radius: 12px;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+    }
+    .search-box input {
+      border: none;
+      flex: 1;
+      padding: 8px;
+      font-size: 16px;
+      outline: none;
+    }
+    .search-box i {
+      color: gray;
+    }
+    .floating-menu {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #fff;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+      border-top: 1px solid #ccc;
+      z-index: 1000;
+      box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+    }
+    .floating-menu a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 12px;
+      color: #444;
+      text-decoration: none;
+    }
+    .floating-menu a.active {
+      color: #5b2dcc;
+    }
+    .floating-menu i {
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-      <div class="logo">WarungPi</div>
-      <ul class="nav-links">
-        <li><a href="#beranda">Beranda</a></li>
-        <li><a href="#produk">Produk</a></li>
-        <li><a href="#tentang">Tentang</a></li>
-        <li><a href="#kontak">Kontak</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div class="header">
+    <img src="/assets/img/pi-logo.png" alt="Logo Pi">
+    <h1>WarungPi</h1>
+  </div>
 
-  <section id="beranda" class="hero">
-    <h1>Selamat Datang di WarungPi</h1>
-    <p>Belanja kebutuhan harian, bayar pakai Pi!</p>
-    <a href="#produk" class="btn-primary">Lihat Produk</a>
-  </section>
+  <div class="card">
+    <h2>Warung</h2>
+    <p>Belanja menjadi prioritas kami.</p>
+  </div>
 
-  <section id="produk" class="section">
-    <h2>Daftar Produk</h2>
-    <div class="product-table-wrapper">
-      <table>
-        <thead>
-          <tr>
-            <th>Produk</th>
-            <th>Harga (IDR)</th>
-            <th>Harga (π)</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody id="product-list">
-          <!-- Produk dimasukkan lewat JavaScript -->
-        </tbody>
-      </table>
-    </div>
-  </section>
+  <div class="highlight-box">
+    Rencana Belanja <br />
+    <span style="font-size: 24px;">30–50% Dapat Diterima</span>
+  </div>
 
-  <section id="tentang" class="section">
-    <h2>Tentang Kami</h2>
-    <p>WarungPi adalah toko digital berbasis Pi Network. Kami menyediakan sembako dan kebutuhan harian untuk komunitas Pi di Indonesia.</p>
-  </section>
+  <div class="search-box">
+    <input type="text" placeholder="Cari distributor terdekat">
+    <i class="fa fa-search"></i>
+  </div>
 
-  <section id="kontak" class="section">
-    <h2>Kontak</h2>
-    <p>Email: warung@pi.id</p>
-    <p>Instagram: <a href="#">@warungpi</a></p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 WarungPi - Powered by Pi Network</p>
-  </footer>
-
-  <!-- Tombol Navigasi Bawah -->
   <div class="floating-menu">
-    <a href="#beranda">🏠 Home</a>
-    <a href="#keranjang" onclick="toggleCart()">🛒 Keranjang (<span id="cart-count">0</span>)</a>
+    <a href="#" class="active">
+      <i class="fa fa-home"></i>
+      Home
+    </a>
+    <a href="#">
+      <i class="fa fa-compass"></i>
+      Explore
+    </a>
+    <a href="#">
+      <i class="fa fa-shopping-bag"></i>
+      Orders
+    </a>
+    <a href="#">
+      <i class="fa fa-user"></i>
+      Account
+    </a>
   </div>
-
-  <!-- Ikon Keranjang di Atas -->
-  <div class="cart-icon" onclick="toggleCart()">
-    🛒
-    <span class="cart-badge" id="cart-count-top">0</span>
-  </div>
-
-  <!-- Popup Keranjang -->
-  <div class="cart-popup" id="cart-popup">
-    <h3>Keranjang</h3>
-    <ul id="cart-items"></ul>
-    <button onclick="toggleCart()">Tutup</button>
-  </div>
-
-  <script>
-    const products = [
-      { nama: "Beras 5kg", idr: "70.000", pi: "0.5 π" },
-      { nama: "Minyak Goreng 2L", idr: "40.000", pi: "0.3 π" },
-      { nama: "Gula 1kg", idr: "14.000", pi: "0.1 π" },
-    ];
-
-    const cart = [];
-
-    const productList = document.getElementById("product-list");
-    const cartItems = document.getElementById("cart-items");
-    const cartCount = document.getElementById("cart-count");
-    const cartCountTop = document.getElementById("cart-count-top");
-
-    function renderProducts() {
-      productList.innerHTML = "";
-      products.forEach((p, index) => {
-        const row = document.createElement("tr");
-        row.innerHTML = `
-          <td>${p.nama}</td>
-          <td>${p.idr}</td>
-          <td>${p.pi}</td>
-          <td><button class="btn-cart" onclick="addToCart(${index})">+ Keranjang</button></td>
-        `;
-        productList.appendChild(row);
-      });
-    }
-
-    function addToCart(index) {
-      cart.push(products[index]);
-      updateCartUI();
-    }
-
-    function updateCartUI() {
-      cartItems.innerHTML = "";
-      cart.forEach((item, i) => {
-        const li = document.createElement("li");
-        li.textContent = `${item.nama} - ${item.pi}`;
-        cartItems.appendChild(li);
-      });
-      cartCount.textContent = cart.length;
-      cartCountTop.textContent = cart.length;
-    }
-
-    function toggleCart() {
-      document.getElementById("cart-popup").classList.toggle("active");
-    }
-
-    renderProducts();
-  </script>
 </body>
 </html>
