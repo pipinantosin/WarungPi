@@ -10,7 +10,7 @@
 <body>
   <header>
     <nav class="navbar">
-      <h1 class="logo">WarungPi</h1>
+      <div class="logo">WarungPi</div>
       <ul class="nav-links">
         <li><a href="#beranda">Beranda</a></li>
         <li><a href="#produk">Produk</a></li>
@@ -21,11 +21,12 @@
   </header>
 
   <section id="beranda" class="hero">
-    <h2>Selamat datang di WarungPi</h2>
-    <p>Toko kebutuhan harian berbasis Pi Network</p>
+    <h1>Selamat Datang di WarungPi</h1>
+    <p>Belanja kebutuhan harian, bayar pakai Pi!</p>
+    <a href="#produk" class="btn-primary">Lihat Produk</a>
   </section>
 
-  <main id="produk">
+  <section id="produk" class="section">
     <h2>Daftar Produk</h2>
     <div class="product-table-wrapper">
       <table>
@@ -33,30 +34,29 @@
           <tr>
             <th>Produk</th>
             <th>Harga (IDR)</th>
-            <th>USD</th>
-            <th>Pi (π)</th>
+            <th>Harga (π)</th>
           </tr>
         </thead>
         <tbody id="product-list">
-          <!-- Diisi oleh JS -->
+          <!-- Diisi dari main.js -->
         </tbody>
       </table>
     </div>
-  </main>
+  </section>
 
   <section id="tentang" class="section">
     <h2>Tentang Kami</h2>
-    <p>WarungPi adalah toko digital yang menjual kebutuhan harian dengan pembayaran berbasis mata uang Pi Network. Mudah, cepat, dan tanpa perantara.</p>
+    <p>WarungPi adalah toko digital berbasis Pi Network. Kami menyediakan sembako dan kebutuhan harian untuk komunitas Pi di Indonesia.</p>
   </section>
 
   <section id="kontak" class="section">
     <h2>Kontak</h2>
-    <p>Email: kontak@warungpi.com</p>
-    <p>Instagram: @warungpi</p>
+    <p>Email: warung@pi.id</p>
+    <p>Instagram: <a href="#">@warungpi</a></p>
   </section>
 
   <footer>
-    <p>&copy; 2025 WarungPi. Terhubung dengan Pi Network.</p>
+    <p>&copy; 2025 WarungPi - Powered by Pi Network</p>
   </footer>
 </body>
 </html>
