@@ -11,7 +11,6 @@ const products = [
   { name: "Susu Bubuk 400gr", priceIdr: 46000 }
 ];
 
-// GCV 1 Pi = $314159, Kurs USD = 16000 IDR
 const USD_RATE = 16000;
 const PI_GCV = 314159;
 
@@ -21,14 +20,16 @@ function convertToPi(priceIdr) {
   return pi.toFixed(6);
 }
 
-const tbody = document.getElementById("product-list");
+document.addEventListener("DOMContentLoaded", () => {
+  const tbody = document.getElementById("product-list");
 
-products.forEach(product => {
-  const tr = document.createElement("tr");
-  tr.innerHTML = `
-    <td>${product.name}</td>
-    <td>Rp ${product.priceIdr.toLocaleString()}</td>
-    <td>${convertToPi(product.priceIdr)} π</td>
-  `;
-  tbody.appendChild(tr);
+  products.forEach(product => {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>${product.name}</td>
+      <td>Rp ${product.priceIdr.toLocaleString()}</td>
+      <td>${convertToPi(product.priceIdr)} π</td>
+    `;
+    tbody.appendChild(tr);
+  });
 });
