@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WarungPi</title>
   <link rel="stylesheet" href="style/main.css" />
-  <script src="js/main.js" defer></script>
 </head>
 <body>
   <header>
@@ -35,10 +34,11 @@
             <th>Produk</th>
             <th>Harga (IDR)</th>
             <th>Harga (π)</th>
+            <th></th>
           </tr>
         </thead>
         <tbody id="product-list">
-          <!-- Diisi dari main.js -->
+          <!-- Produk dimasukkan lewat JavaScript -->
         </tbody>
       </table>
     </div>
@@ -59,22 +59,74 @@
     <p>&copy; 2025 WarungPi - Powered by Pi Network</p>
   </footer>
 
-  <!-- Tombol Mengambang Bawah -->
+  <!-- Tombol Navigasi Bawah -->
   <div class="floating-menu">
-    <a href="#beranda">Home</a>
-    <a href="#login">Login</a>
+    <a href="#beranda">🏠 Home</a>
+    <a href="#keranjang" onclick="toggleCart()">🛒 Keranjang (<span id="cart-count">0</span>)</a>
   </div>
 
-  <!-- Tombol Mengambang Bawah -->
-<div class="floating-menu">
-  <a href="#beranda">🏠 Home</a>
-  <a href="#keranjang">🛒 Keranjang</a>
-</div>
+  <!-- Ikon Keranjang di Atas -->
+  <div class="cart-icon" onclick="toggleCart()">
+    🛒
+    <span class="cart-badge" id="cart-count-top">0</span>
+  </div>
 
-<!-- Ikon Keranjang di Kanan Atas -->
-<div class="cart-icon">
-  <a href="#keranjang" title="Lihat Keranjang">🛒</a>
-</div>
+  <!-- Popup Keranjang -->
+  <div class="cart-popup" id="cart-popup">
+    <h3>Keranjang</h3>
+    <ul id="cart-items"></ul>
+    <button onclick="toggleCart()">Tutup</button>
+  </div>
 
+  <script>
+    const products = [
+      { nama: "Beras 5kg", idr: "70.000", pi: "0.5 π" },
+      { nama: "Minyak Goreng 2L", idr: "40.000", pi: "0.3 π" },
+      { nama: "Gula 1kg", idr: "14.000", pi: "0.1 π" },
+    ];
+
+    const cart = [];
+
+    const productList = document.getElementById("product-list");
+    const cartItems = document.getElementById("cart-items");
+    const cartCount = document.getElementById("cart-count");
+    const cartCountTop = document.getElementById("cart-count-top");
+
+    function renderProducts() {
+      productList.innerHTML = "";
+      products.forEach((p, index) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${p.nama}</td>
+          <td>${p.idr}</td>
+          <td>${p.pi}</td>
+          <td><button class="btn-cart" onclick="addToCart(${index})">+ Keranjang</button></td>
+        `;
+        productList.appendChild(row);
+      });
+    }
+
+    function addToCart(index) {
+      cart.push(products[index]);
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      cartItems.innerHTML = "";
+      cart.forEach((item, i) => {
+        const li = document.createElement("li");
+        li.textContent = `${item.nama} - ${item.pi}`;
+        cartItems.appendChild(li);
+      });
+      cartCount.textContent = cart.length;
+      cartCountTop.textContent = cart.length;
+    }
+
+    function toggleCart() {
+      document.getElementById("cart-popup").classList.toggle("active");
+    }
+
+    renderProducts();
+  </script>
 </body>
 </html>
