@@ -7,13 +7,23 @@
   <link rel="stylesheet" href="style/main.css" />
 </head>
 <body>
-  <header>
-    <h1>WarungPi</h1>
-    <p>Belanja kebutuhan warung dengan Pi Network</p>
+  <nav>
+    <div class="nav-brand">WarungPi</div>
+    <ul class="nav-menu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#produk">Produk</a></li>
+      <li><a href="#tentang">Tentang</a></li>
+    </ul>
+  </nav>
+
+  <header id="home">
+    <h1>Selamat datang di WarungPi</h1>
+    <p>Belanja kebutuhan warung langsung dengan Pi Network</p>
+    <button id="login-btn">Login dengan Pi</button>
   </header>
 
   <main>
-    <section>
+    <section id="produk">
       <h2>Daftar Produk</h2>
       <ul id="product-list">
         <li class="price-idr" data-idr="15000">
@@ -27,10 +37,15 @@
         </li>
       </ul>
     </section>
+
+    <section id="tentang">
+      <h2>Tentang WarungPi</h2>
+      <p>WarungPi adalah platform digital untuk warung-warung Indonesia bertransaksi menggunakan Pi Network secara langsung.</p>
+    </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 WarungPi</p>
+    <p>&copy; 2025 WarungPi. Dibangun untuk komunitas Pi Network Indonesia.</p>
   </footer>
 
   <script src="js/main.js"></script>
