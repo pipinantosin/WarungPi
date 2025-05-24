@@ -65,6 +65,11 @@
       font-size: 16px;
       outline: none;
     }
+    .search-box button {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
     .search-box i {
       color: gray;
     }
@@ -114,10 +119,12 @@
     <span style="font-size: 24px;">30–50% Dapat Diterima</span>
   </div>
 
-  <div class="search-box">
-    <input type="text" placeholder="Cari distributor terdekat">
-    <i class="fa fa-search"></i>
-  </div>
+  <form id="searchForm" class="search-box">
+    <input type="text" id="searchQuery" placeholder="Cari distributor terdekat">
+    <button type="submit"><i class="fa fa-search"></i></button>
+  </form>
+
+  <div id="hasilDistributor" style="margin: 16px;"></div>
 
   <div class="floating-menu">
     <a href="#" class="active">
@@ -137,5 +144,24 @@
       Account
     </a>
   </div>
+
+  <script>
+    const form = document.getElementById('searchForm');
+    const hasil = document.getElementById('hasilDistributor');
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const query = document.getElementById('searchQuery').value;
+      const response = await fetch('http://localhost:3000/api/cari-distributor', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ query })
+      });
+      const data = await response.json();
+      hasil.innerHTML = data.length
+        ? '<ul>' + data.map(d => `<li>${d.nama} - ${d.lokasi}</li>`).join('') + '</ul>'
+        : '<p>Tidak ditemukan distributor</p>';
+    });
+  </script>
 </body>
 </html>
