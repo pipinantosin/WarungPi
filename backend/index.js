@@ -1,14 +1,20 @@
-// backend/index.js (terhubung ke Freesqldatabase.com)
+// backend/index.js (dengan CORS preflight fix)
 const express = require('express');
 const cors = require('cors');
 const mysql = require('mysql2/promise');
 const app = express();
 const port = 3000;
 
-// Izinkan akses dari GitHub Pages
-app.use(cors({
-  origin: 'https://pipinantosin.github.io'
-}));
+// Middleware CORS preflight global
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'https://pipinantosin.github.io');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  if (req.method === 'OPTIONS') {
+    return res.sendStatus(200);
+  }
+  next();
+});
 
 app.use(express.json());
 
@@ -32,7 +38,7 @@ app.post('/api/cari-distributor', async (req, res) => {
     res.json(rows);
   } catch (err) {
     console.error('Error:', err);
-    res.status(500).json({ error: 'Database error', detail: err });
+    res.status(500).json({ error: 'Database error', detail: err.message });
   }
 });
 
