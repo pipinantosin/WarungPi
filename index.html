@@ -102,6 +102,7 @@
       margin-bottom: 4px;
     }
   </style>
+<script src="https://sdk.minepi.com/pi-sdk.js"></script>
 </head>
 <body>
   <div class="header">
@@ -172,5 +173,26 @@
       }
     });
   </script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    if (window.Pi) {
+      Pi.init({
+        version: "2.0",
+        sandbox: false,
+        onIncompletePaymentFound: function(payment) {
+          console.log("Incomplete payment found", payment);
+        }
+      });
+
+      Pi.authenticate(["username", "payments"], function(authResult) {
+        console.log("Autentikasi berhasil:", authResult);
+      }, function(error) {
+        console.error("Gagal autentikasi:", error);
+      });
+    } else {
+      console.warn("Pi SDK tidak ditemukan — bukan dari Pi Browser?");
+    }
+  });
+</script>
 </body>
 </html>
