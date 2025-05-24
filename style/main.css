@@ -1,15 +1,165 @@
-.logo-img {
-  width: 50px;
-  height: auto;
-  margin-right: 12px;
-}
-.header {
-  display: flex;
-  align-items: center;
-  padding: 16px;
+/* Menu Mengambang di Bawah */
+.floating-menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
   background-color: #5c2d91;
+  display: flex;
+  justify-content: space-around;
+  padding: 0.8rem 0;
+  z-index: 999;
 }
-.header h1 {
+
+.floating-menu a {
   color: white;
-  font-size: 24px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* Ikon Keranjang di Kanan Atas */
+.cart-icon {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background-color: #5c2d91;
+  color: white;
+  padding: 0.5rem 0.7rem;
+  border-radius: 50%;
+  z-index: 1000;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.floating-menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #5c2d91;
+  display: flex;
+  justify-content: space-around;
+  padding: 0.8rem 0;
+  z-index: 999;
+}
+
+.floating-menu a {
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.cart-icon {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background-color: #5c2d91;
+  color: white;
+  padding: 0.5rem 0.7rem;
+  border-radius: 50%;
+  z-index: 1000;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.btn-cart {
+  background-color: #5c2d91;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn-cart:hover {
+  background-color: #432174;
+}
+/* Menu bawah */
+.floating-menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #5c2d91;
+  display: flex;
+  justify-content: space-around;
+  padding: 0.8rem 0;
+  z-index: 999;
+}
+
+.floating-menu a {
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* Ikon keranjang atas */
+.cart-icon {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background-color: #5c2d91;
+  color: white;
+  padding: 0.6rem;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.cart-badge {
+  background: red;
+  color: white;
+  font-size: 0.7rem;
+  border-radius: 50%;
+  padding: 2px 6px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/* Tombol pesan */
+.btn-cart {
+  background-color: #5c2d91;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-cart:hover {
+  background-color: #432174;
+}
+
+/* Popup keranjang */
+.cart-popup {
+  position: fixed;
+  top: 70px;
+  right: 20px;
+  background: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  padding: 1rem;
+  width: 250px;
+  max-height: 300px;
+  overflow-y: auto;
+  display: none;
+  z-index: 2000;
+}
+
+.cart-popup.active {
+  display: block;
+}
+
+.cart-popup h3 {
+  margin-top: 0;
+}
+
+.cart-popup ul {
+  padding-left: 1rem;
+  margin-bottom: 1rem;
 }
