@@ -1,4 +1,4 @@
-// backend/index.js (dengan CORS untuk GitHub Pages)
+// backend/index.js (terhubung ke Freesqldatabase.com)
 const express = require('express');
 const cors = require('cors');
 const mysql = require('mysql2/promise');
@@ -12,13 +12,13 @@ app.use(cors({
 
 app.use(express.json());
 
-// Koneksi ke database db4free.net
+// Koneksi ke database Freesqldatabase
 const db = mysql.createPool({
-  host: 'db4free.net',
+  host: 'sql12.freesqldatabase.com',
   port: 3306,
-  user: 'emunguser',
-  password: 'Emung12345',
-  database: 'emungready'
+  user: 'sql12780934',
+  password: 'htU5vWXJ1m',
+  database: 'sql12780934'
 });
 
 // Endpoint untuk pencarian distributor
