@@ -1,9 +1,10 @@
-// backend/index.js (dengan CORS preflight fix)
+// backend/index.js (terhubung ke Freesqldatabase.com & PORT fix untuk Railway)
 const express = require('express');
 const cors = require('cors');
 const mysql = require('mysql2/promise');
 const app = express();
-const port = 3000;
+
+const port = process.env.PORT || 8080; // Gunakan PORT dari Railway
 
 // Middleware CORS preflight global
 app.use((req, res, next) => {
@@ -44,5 +45,5 @@ app.post('/api/cari-distributor', async (req, res) => {
 
 // Menjalankan server
 app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
+  console.log(`Server running on port ${port}`);
 });
