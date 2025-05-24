@@ -1,0 +1,11 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #4B2AAF; /* warna khas WarungPi */
+}
+
+.logo-img {
+  height: 50px;
+  margin-right: 15px;
+}
