@@ -1,4 +1,4 @@
-// backend/index.js
+// backend/index.js (terhubung ke db online)
 const express = require('express');
 const cors = require('cors');
 const mysql = require('mysql2/promise');
@@ -8,15 +8,16 @@ const port = 3000;
 app.use(cors());
 app.use(express.json());
 
-// Koneksi database
+// Koneksi ke database db4free.net
 const db = mysql.createPool({
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'warungpi'
+  host: 'db4free.net',
+  port: 3306,
+  user: 'emunguser',
+  password: 'Emung12345',
+  database: 'emungready'
 });
 
-// Endpoint cari distributor
+// Endpoint untuk pencarian distributor
 app.post('/api/cari-distributor', async (req, res) => {
   const { query } = req.body;
   try {
@@ -26,11 +27,12 @@ app.post('/api/cari-distributor', async (req, res) => {
     );
     res.json(rows);
   } catch (err) {
+    console.error('Error:', err);
     res.status(500).json({ error: 'Database error', detail: err });
   }
 });
 
+// Menjalankan server
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
-
