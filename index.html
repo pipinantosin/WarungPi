@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WarungPi</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="main.css" />
   <style>
     body {
       margin: 0;
@@ -18,7 +19,7 @@
       align-items: center;
       padding: 16px;
     }
-    .header img {
+    .logo-img {
       width: 40px;
       margin-right: 12px;
     }
@@ -64,39 +65,11 @@
     .search-box i {
       color: gray;
     }
-    .floating-menu {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background: #fff;
-      display: flex;
-      justify-content: space-around;
-      padding: 10px 0;
-      border-top: 1px solid #ccc;
-      z-index: 1000;
-      box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
-    }
-    .floating-menu a {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      font-size: 12px;
-      color: #444;
-      text-decoration: none;
-    }
-    .floating-menu a.active {
-      color: #5b2dcc;
-    }
-    .floating-menu i {
-      font-size: 18px;
-      margin-bottom: 4px;
-    }
   </style>
 </head>
 <body>
   <div class="header">
-    <img src="/assets/img/Logo-WarungPi.png" alt="Logo Pi">
+    <img src="assets/img/logo-warungpi.png" alt="Logo WarungPi" class="logo-img" />
     <h1>WarungPi</h1>
   </div>
 
