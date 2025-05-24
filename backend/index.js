@@ -1,3 +1,42 @@
-cd backend
-npm install express mysql2 cors
-node index.js
+// backend/index.js (dengan CORS untuk GitHub Pages)
+const express = require('express');
+const cors = require('cors');
+const mysql = require('mysql2/promise');
+const app = express();
+const port = 3000;
+
+// Izinkan akses dari GitHub Pages
+app.use(cors({
+  origin: 'https://pipinantosin.github.io'
+}));
+
+app.use(express.json());
+
+// Koneksi ke database db4free.net
+const db = mysql.createPool({
+  host: 'db4free.net',
+  port: 3306,
+  user: 'emunguser',
+  password: 'Emung12345',
+  database: 'emungready'
+});
+
+// Endpoint untuk pencarian distributor
+app.post('/api/cari-distributor', async (req, res) => {
+  const { query } = req.body;
+  try {
+    const [rows] = await db.execute(
+      "SELECT * FROM distributor WHERE nama LIKE ? OR lokasi LIKE ?",
+      [`%${query}%`, `%${query}%`]
+    );
+    res.json(rows);
+  } catch (err) {
+    console.error('Error:', err);
+    res.status(500).json({ error: 'Database error', detail: err });
+  }
+});
+
+// Menjalankan server
+app.listen(port, () => {
+  console.log(`Server running on http://localhost:${port}`);
+});
