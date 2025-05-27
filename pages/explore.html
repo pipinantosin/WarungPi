@@ -35,5 +35,15 @@
       Bantuan
     </a>
   </div>
+
+<div id="nav-placeholder"></div>
+<script>
+  fetch('../assets/components/nav.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('nav-placeholder').innerHTML = data;
+    });
+</script>
+
 </body>
 </html>
