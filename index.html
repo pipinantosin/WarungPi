@@ -1,12 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WarungPi</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="main.css">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>WarungPi</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+<link href="main.css" rel="stylesheet"/>
+<style>
     body {
       margin: 0;
       font-family: 'Arial', sans-serif;
@@ -105,48 +106,46 @@
 <script src="https://sdk.minepi.com/pi-sdk.js"></script>
 </head>
 <body>
-  <div class="header">
-    <img src="assets/img/logo-warungpi.png" alt="Logo WarungPi" class="logo-img">
-    <h1>WarungPi</h1>
-  </div>
-
-  <div class="card">
-    <h2>Warung</h2>
-    <p>Digitalisasi Warung Nusantara dengan Pi Network.</p>
-  </div>
-
-  <div class="highlight-box">
-    Rencana Belanja <br />
-    <span style="font-size: 24px;">30–50% Dapat Diterima</span>
-  </div>
-
-  <form id="searchForm" class="search-box">
-    <input type="text" id="searchQuery" placeholder="Cari distributor terdekat">
-    <button type="submit"><i class="fa fa-search"></i></button>
-  </form>
-
-  <div id="hasilDistributor" style="margin: 16px;"></div>
-
-  <div class="floating-menu">
-    <a href="#" class="active">
-      <i class="fa fa-home"></i>
+<div class="header">
+<img alt="Logo WarungPi" class="logo-img" src="assets/img/logo-warungpi.png"/>
+<h1>WarungPi</h1>
+</div>
+<div class="card">
+<h2>Warung</h2>
+<p>Digitalisasi Warung Nusantara dengan Pi Network.</p>
+</div>
+<div class="highlight-box">
+    Rencana Belanja <br/>
+<span style="font-size: 24px;">30–50% Dapat Diterima</span>
+</div>
+<form class="search-box" id="searchForm">
+<input id="searchQuery" placeholder="Cari distributor terdekat" type="text"/>
+<button type="submit"><i class="fa fa-search"></i></button>
+</form>
+<div id="hasilDistributor" style="margin: 16px;"></div>
+<div class="floating-menu">
+<a class="active" href="index.html">
+<i class="fa fa-home"></i>
       Home
     </a>
-    <a href="#">
-      <i class="fa fa-compass"></i>
+<a href="pages/explore.html">
+<i class="fa fa-compass"></i>
       Explore
     </a>
-    <a href="#">
-      <i class="fa fa-shopping-bag"></i>
+<a href="pages/orders.html">
+<i class="fa fa-shopping-bag"></i>
       Orders
     </a>
-    <a href="#">
-      <i class="fa fa-user"></i>
+<a href="pages/account.html">
+<i class="fa fa-user"></i>
       Account
     </a>
-  </div>
-
-  <script>
+<a href="pages/support.html">
+<i class="fa fa-life-ring"></i>
+      Bantuan
+    </a>
+</div>
+<script>
     const form = document.getElementById('searchForm');
     const hasil = document.getElementById('hasilDistributor');
 
